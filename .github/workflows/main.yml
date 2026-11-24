@@ -1,0 +1,27 @@
+name: Reactjs
+
+on: 
+ push:
+   branches:
+     - main
+
+
+
+jobs:
+  version:
+   runs-on: ubuntu-latest
+
+   steps:
+     - name: cheakout
+       uses: actions/checkout@v4
+
+     - name: nodejs_install
+       uses: actions/setup-node@v4
+       with:
+           node-version: 22.x
+
+     - name: npm install
+       run: npm install
+
+     - name: build
+       run: npm run build
